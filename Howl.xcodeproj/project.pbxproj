@@ -15,6 +15,8 @@
 		B5C4085A263ABD0A00D8F494 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5C40859263ABD0A00D8F494 /* Assets.xcassets */; };
 		B5C4085D263ABD0A00D8F494 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5C4085B263ABD0A00D8F494 /* LaunchScreen.storyboard */; };
 		B5C40868263B1EC600D8F494 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = B5C40867263B1EC600D8F494 /* .gitignore */; };
+		B5C40870263C736B00D8F494 /* NunitoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5C4086E263C733300D8F494 /* NunitoSans-Regular.ttf */; };
+		B5C40871263C737100D8F494 /* NunitoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5C4086F263C734400D8F494 /* NunitoSans-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		B5C4085C263ABD0A00D8F494 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B5C4085E263ABD0A00D8F494 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5C40867263B1EC600D8F494 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		B5C4086E263C733300D8F494 /* NunitoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Regular.ttf"; sourceTree = "<group>"; };
+		B5C4086F263C734400D8F494 /* NunitoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,17 +64,35 @@
 		B5C4084C263ABD0900D8F494 /* Howl */ = {
 			isa = PBXGroup;
 			children = (
+				B5C40872263C798700D8F494 /* View */,
 				B5C4084D263ABD0900D8F494 /* AppDelegate.swift */,
 				B5C4084F263ABD0900D8F494 /* SceneDelegate.swift */,
 				B5C40851263ABD0900D8F494 /* ViewController.swift */,
-				B5C40853263ABD0900D8F494 /* Main.storyboard */,
 				B5C40859263ABD0A00D8F494 /* Assets.xcassets */,
-				B5C4085B263ABD0A00D8F494 /* LaunchScreen.storyboard */,
 				B5C4085E263ABD0A00D8F494 /* Info.plist */,
 				B5C40856263ABD0900D8F494 /* Howl.xcdatamodeld */,
+				B5C4086C263C72A100D8F494 /* Fonts */,
 				B5C40867263B1EC600D8F494 /* .gitignore */,
 			);
 			path = Howl;
+			sourceTree = "<group>";
+		};
+		B5C4086C263C72A100D8F494 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B5C4086E263C733300D8F494 /* NunitoSans-Regular.ttf */,
+				B5C4086F263C734400D8F494 /* NunitoSans-Bold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		B5C40872263C798700D8F494 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B5C4085B263ABD0A00D8F494 /* LaunchScreen.storyboard */,
+				B5C40853263ABD0900D8F494 /* Main.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,6 +154,8 @@
 			files = (
 				B5C40868263B1EC600D8F494 /* .gitignore in Resources */,
 				B5C4085D263ABD0A00D8F494 /* LaunchScreen.storyboard in Resources */,
+				B5C40870263C736B00D8F494 /* NunitoSans-Regular.ttf in Resources */,
+				B5C40871263C737100D8F494 /* NunitoSans-Bold.ttf in Resources */,
 				B5C4085A263ABD0A00D8F494 /* Assets.xcassets in Resources */,
 				B5C40855263ABD0900D8F494 /* Main.storyboard in Resources */,
 			);
