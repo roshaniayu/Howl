@@ -32,12 +32,8 @@
                                 <rect key="frame" x="16" y="100" width="358" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mountain" translatesAutoresizingMaskIntoConstraints="NO" id="x2d-1f-T1J">
-                                <rect key="frame" x="0.0" y="472" width="390" height="525.66666666666663"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="howl_and_sophie" translatesAutoresizingMaskIntoConstraints="NO" id="YRY-WP-Ev6">
-                                <rect key="frame" x="0.0" y="571" width="390" height="516"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x2d-1f-T1J">
+                                <rect key="frame" x="-1" y="466" width="392" height="528"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sleep better" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WE9-Vr-4Oh">
@@ -87,11 +83,20 @@
                                 <color key="tintColor" red="0.81568627449999997" green="0.82352941180000006" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" image="icon_set"/>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YRY-WP-Ev6">
+                                <rect key="frame" x="-1" y="567" width="392" height="518"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="backgroundImage" destination="x2d-1f-T1J" id="HPZ-o2-PQ7"/>
+                        <outlet property="characterImage" destination="YRY-WP-Ev6" id="Eag-hk-shK"/>
+                        <outlet property="historyButton" destination="HPv-n4-xv1" id="Za8-CB-o9Y"/>
+                        <outlet property="playButton" destination="OGl-yV-tfp" id="1cl-iq-zvD"/>
+                        <outlet property="setButton" destination="i6O-6C-jue" id="34Q-Qg-5lE"/>
                         <outlet property="timerPicker" destination="JG4-Gf-gVe" id="GdJ-CZ-mRQ"/>
                         <outlet property="timerView" destination="RYL-6R-kCz" id="6s4-2J-4uw"/>
                     </connections>
@@ -103,12 +108,10 @@
     </scenes>
     <resources>
         <image name="background" width="500" height="1082"/>
-        <image name="howl_and_sophie" width="500" height="662"/>
         <image name="icon_history" width="500" height="480"/>
         <image name="icon_play" width="500" height="500"/>
         <image name="icon_set" width="500" height="479"/>
         <image name="logo_only_for_dark_background" width="500" height="500"/>
-        <image name="mountain" width="500" height="674"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
