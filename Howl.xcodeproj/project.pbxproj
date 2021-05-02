@@ -17,9 +17,9 @@
 		B5C40868263B1EC600D8F494 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = B5C40867263B1EC600D8F494 /* .gitignore */; };
 		B5C40870263C736B00D8F494 /* NunitoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5C4086E263C733300D8F494 /* NunitoSans-Regular.ttf */; };
 		B5C40871263C737100D8F494 /* NunitoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5C4086F263C734400D8F494 /* NunitoSans-Bold.ttf */; };
-		B5C40875263D33F000D8F494 /* 14 Kaze no Toori Michi (From _My Neighbor Totoro_).m4a in Resources */ = {isa = PBXBuildFile; fileRef = B5C40874263D33F000D8F494 /* 14 Kaze no Toori Michi (From _My Neighbor Totoro_).m4a */; };
-		B5C40877263D33FB00D8F494 /* 02 Merry Go Round of Life (From _Howl's Moving Castle_).m4a in Resources */ = {isa = PBXBuildFile; fileRef = B5C40876263D33FB00D8F494 /* 02 Merry Go Round of Life (From _Howl's Moving Castle_).m4a */; };
-		B5C40879263D340500D8F494 /* 01 Inochi no Namae (From _Spirited Away_).m4a in Resources */ = {isa = PBXBuildFile; fileRef = B5C40878263D340500D8F494 /* 01 Inochi no Namae (From _Spirited Away_).m4a */; };
+		B5C40875263D33F000D8F494 /* kaze_no_toori_michi.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B5C40874263D33F000D8F494 /* kaze_no_toori_michi.m4a */; };
+		B5C40877263D33FB00D8F494 /* merry_go_round_of_life.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B5C40876263D33FB00D8F494 /* merry_go_round_of_life.m4a */; };
+		B5C40879263D340500D8F494 /* inochi_no_namae.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B5C40878263D340500D8F494 /* inochi_no_namae.m4a */; };
 		B5C4087B263D387000D8F494 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C4087A263D387000D8F494 /* UserDefaults.swift */; };
 		B5C4087E263F0B7900D8F494 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C4087D263F0B7900D8F494 /* Time.swift */; };
 /* End PBXBuildFile section */
@@ -37,9 +37,9 @@
 		B5C40867263B1EC600D8F494 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		B5C4086E263C733300D8F494 /* NunitoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Regular.ttf"; sourceTree = "<group>"; };
 		B5C4086F263C734400D8F494 /* NunitoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Bold.ttf"; sourceTree = "<group>"; };
-		B5C40874263D33F000D8F494 /* 14 Kaze no Toori Michi (From _My Neighbor Totoro_).m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "14 Kaze no Toori Michi (From _My Neighbor Totoro_).m4a"; sourceTree = "<group>"; };
-		B5C40876263D33FB00D8F494 /* 02 Merry Go Round of Life (From _Howl's Moving Castle_).m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "02 Merry Go Round of Life (From _Howl's Moving Castle_).m4a"; sourceTree = "<group>"; };
-		B5C40878263D340500D8F494 /* 01 Inochi no Namae (From _Spirited Away_).m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "01 Inochi no Namae (From _Spirited Away_).m4a"; sourceTree = "<group>"; };
+		B5C40874263D33F000D8F494 /* kaze_no_toori_michi.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = kaze_no_toori_michi.m4a; sourceTree = "<group>"; };
+		B5C40876263D33FB00D8F494 /* merry_go_round_of_life.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = merry_go_round_of_life.m4a; sourceTree = "<group>"; };
+		B5C40878263D340500D8F494 /* inochi_no_namae.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = inochi_no_namae.m4a; sourceTree = "<group>"; };
 		B5C4087A263D387000D8F494 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		B5C4087D263F0B7900D8F494 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,9 +111,9 @@
 		B5C40873263D33DA00D8F494 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
-				B5C40878263D340500D8F494 /* 01 Inochi no Namae (From _Spirited Away_).m4a */,
-				B5C40876263D33FB00D8F494 /* 02 Merry Go Round of Life (From _Howl's Moving Castle_).m4a */,
-				B5C40874263D33F000D8F494 /* 14 Kaze no Toori Michi (From _My Neighbor Totoro_).m4a */,
+				B5C40878263D340500D8F494 /* inochi_no_namae.m4a */,
+				B5C40876263D33FB00D8F494 /* merry_go_round_of_life.m4a */,
+				B5C40874263D33F000D8F494 /* kaze_no_toori_michi.m4a */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -185,13 +185,13 @@
 			files = (
 				B5C40868263B1EC600D8F494 /* .gitignore in Resources */,
 				B5C4085D263ABD0A00D8F494 /* LaunchScreen.storyboard in Resources */,
-				B5C40877263D33FB00D8F494 /* 02 Merry Go Round of Life (From _Howl's Moving Castle_).m4a in Resources */,
+				B5C40877263D33FB00D8F494 /* merry_go_round_of_life.m4a in Resources */,
 				B5C40870263C736B00D8F494 /* NunitoSans-Regular.ttf in Resources */,
 				B5C40871263C737100D8F494 /* NunitoSans-Bold.ttf in Resources */,
 				B5C4085A263ABD0A00D8F494 /* Assets.xcassets in Resources */,
 				B5C40855263ABD0900D8F494 /* Main.storyboard in Resources */,
-				B5C40875263D33F000D8F494 /* 14 Kaze no Toori Michi (From _My Neighbor Totoro_).m4a in Resources */,
-				B5C40879263D340500D8F494 /* 01 Inochi no Namae (From _Spirited Away_).m4a in Resources */,
+				B5C40875263D33F000D8F494 /* kaze_no_toori_michi.m4a in Resources */,
+				B5C40879263D340500D8F494 /* inochi_no_namae.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

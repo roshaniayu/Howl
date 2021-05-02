@@ -95,7 +95,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9zQ-S3-l5S">
-                                        <rect key="frame" x="16" y="7" width="52" height="24"/>
+                                        <rect key="frame" x="16" y="8" width="52" height="24"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="17"/>
                                         <color key="textColor" red="0.27058823529999998" green="0.47058823529999999" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -111,6 +111,7 @@
                     <connections>
                         <outlet property="backgroundImage" destination="x2d-1f-T1J" id="HPZ-o2-PQ7"/>
                         <outlet property="characterImage" destination="YRY-WP-Ev6" id="Eag-hk-shK"/>
+                        <outlet property="countdownLabel" destination="9zQ-S3-l5S" id="aCp-Bk-Oxv"/>
                         <outlet property="countdownView" destination="ZCa-OZ-oOI" id="x5l-CX-WwT"/>
                         <outlet property="descriptionLabel" destination="nGg-mS-zP6" id="4s8-Oa-QrZ"/>
                         <outlet property="headerLabel" destination="WE9-Vr-4Oh" id="JB8-pD-7UC"/>
