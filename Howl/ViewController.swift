@@ -17,12 +17,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var historyButton: UIButton!
     @IBOutlet weak var setButton: UIButton!
+    @IBOutlet weak var headerLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var countdownView: UIView!
     
     let userDefaultsValue = UserDefaults.standard.getValueLoad()
-    let timer = ["5 mins", "10 mins", "15 mins", "30 mins", "45 mins", "1 hour"]
     let pickerWidth: CGFloat = 62
     let pickerHeight: CGFloat = 80
     var rotationAngle: CGFloat!
+    var timer: [Time] = []
     var songs = [Song]()
     var selectedSong = [Song]()
     
@@ -40,7 +43,17 @@ class ViewController: UIViewController {
         // timerView modification
         timerView.layer.cornerRadius = 22
         
+        generateTime()
         loadSongsData()
+    }
+    
+    func generateTime() {
+        timer.append(Time(timeType: .fiveMins, timeName: "5 mins", timeDuration: 300))
+        timer.append(Time(timeType: .tenMins, timeName: "10 mins", timeDuration: 600))
+        timer.append(Time(timeType: .fifteenMins, timeName: "15 mins", timeDuration: 900))
+        timer.append(Time(timeType: .thirtyMins, timeName: "30 mins", timeDuration: 1800))
+        timer.append(Time(timeType: .fortyfiveMins, timeName: "45 mins", timeDuration: 2700))
+        timer.append(Time(timeType: .oneHour, timeName: "1 hour", timeDuration: 3600))
     }
     
     func getCoreDataContainer() -> NSManagedObjectContext {
@@ -117,6 +130,20 @@ class ViewController: UIViewController {
         
         loadAmbience()
     }
+    
+    @IBAction func playSong(_ sender: UIButton) {
+        headerLabel.text = "Have a great sleep"
+        descriptionLabel.text = "Once upon a time th..e.... a.. zzzzzzzzz..."
+        descriptionLabel.frame = CGRect(x: 97, y: 223, width: 197, height: 48)
+        descriptionLabel.numberOfLines = 2
+        timerPicker.isHidden = true
+        timerView.isHidden = true
+        historyButton.isHidden = true
+        setButton.isHidden = true
+        playButton.setImage(UIImage(named: "icon_stop"), for: .normal)
+        countdownView.layer.cornerRadius = 19
+        countdownView.isHidden = false
+    }
 }
 
 extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -145,7 +172,7 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         label.textAlignment = .center
         label.font = UIFont(name: "NunitoSans-Regular.ttf", size: 17)
         label.textColor = UIColor(red: 0.82, green: 0.82, blue: 0.80, alpha: 1.0)
-        label.text = timer[row]
+        label.text = timer[row].name
         view.addSubview(label)
         
         rotationAngle = 90 * (.pi/180)

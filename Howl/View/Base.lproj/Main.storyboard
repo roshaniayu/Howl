@@ -36,6 +36,10 @@
                                 <rect key="frame" x="-1" y="466" width="392" height="528"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YRY-WP-Ev6">
+                                <rect key="frame" x="-1" y="567" width="392" height="518"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sleep better" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WE9-Vr-4Oh">
                                 <rect key="frame" x="16" y="176" width="358" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -70,6 +74,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.81568627449999997" green="0.82352941180000006" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" image="icon_play"/>
+                                <connections>
+                                    <action selector="playSong:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YV3-Qg-JMX"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPv-n4-xv1">
                                 <rect key="frame" x="115" y="742" width="24" height="24"/>
@@ -83,10 +90,20 @@
                                 <color key="tintColor" red="0.81568627449999997" green="0.82352941180000006" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" image="icon_set"/>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YRY-WP-Ev6">
-                                <rect key="frame" x="-1" y="567" width="392" height="518"/>
+                            <view hidden="YES" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZCa-OZ-oOI">
+                                <rect key="frame" x="153" y="287" width="84" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9zQ-S3-l5S">
+                                        <rect key="frame" x="16" y="7" width="52" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="17"/>
+                                        <color key="textColor" red="0.27058823529999998" green="0.47058823529999999" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.81568627449999997" green="0.82352941180000006" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -94,6 +111,9 @@
                     <connections>
                         <outlet property="backgroundImage" destination="x2d-1f-T1J" id="HPZ-o2-PQ7"/>
                         <outlet property="characterImage" destination="YRY-WP-Ev6" id="Eag-hk-shK"/>
+                        <outlet property="countdownView" destination="ZCa-OZ-oOI" id="x5l-CX-WwT"/>
+                        <outlet property="descriptionLabel" destination="nGg-mS-zP6" id="4s8-Oa-QrZ"/>
+                        <outlet property="headerLabel" destination="WE9-Vr-4Oh" id="JB8-pD-7UC"/>
                         <outlet property="historyButton" destination="HPv-n4-xv1" id="Za8-CB-o9Y"/>
                         <outlet property="playButton" destination="OGl-yV-tfp" id="1cl-iq-zvD"/>
                         <outlet property="setButton" destination="i6O-6C-jue" id="34Q-Qg-5lE"/>
