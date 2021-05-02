@@ -52,12 +52,12 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     func generateTime() {
-        times.append(Time(timeType: .fiveMins, timeName: "5 mins", timeDuration: 299))
-        times.append(Time(timeType: .tenMins, timeName: "10 mins", timeDuration: 599))
-        times.append(Time(timeType: .fifteenMins, timeName: "15 mins", timeDuration: 899))
-        times.append(Time(timeType: .thirtyMins, timeName: "30 mins", timeDuration: 1799))
-        times.append(Time(timeType: .fortyfiveMins, timeName: "45 mins", timeDuration: 2699))
-        times.append(Time(timeType: .oneHour, timeName: "1 hour", timeDuration: 3599))
+        times.append(Time(timeName: "5 mins", timeDuration: 299))
+        times.append(Time(timeName: "10 mins", timeDuration: 599))
+        times.append(Time(timeName: "15 mins", timeDuration: 899))
+        times.append(Time(timeName: "30 mins", timeDuration: 1799))
+        times.append(Time(timeName: "45 mins", timeDuration: 2699))
+        times.append(Time(timeName: "1 hour", timeDuration: 3599))
     }
     
     func getCoreDataContainer() -> NSManagedObjectContext {
