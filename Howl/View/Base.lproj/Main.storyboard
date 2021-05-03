@@ -189,11 +189,24 @@ The sun looked down, and brightly whispered: ‘To give you another try.’
                                 <color key="textColor" red="0.81568627449999997" green="0.82352941180000006" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qpb-iW-Kxu">
+                                <rect key="frame" x="30" y="675" width="330" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.81568627449999997" green="0.82352941180000006" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="17"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" red="0.14901960780000001" green="0.26274509800000001" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickDoneButton:" destination="BEF-oQ-c8k" eventType="touchUpInside" id="sJh-oo-Trw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Nhz-bN-17j"/>
                         <color key="backgroundColor" red="0.14901960780000001" green="0.26274509800000001" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <connections>
+                        <outlet property="doneButton" destination="qpb-iW-Kxu" id="Jlk-WZ-DaZ"/>
                         <outlet property="durationLabel" destination="dC9-Zy-Vdj" id="x9C-mp-EeU"/>
                     </connections>
                 </viewController>

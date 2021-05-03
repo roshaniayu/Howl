@@ -10,6 +10,7 @@ import UIKit
 class SessionFinishedViewController: UIViewController {
 
     @IBOutlet weak var durationLabel: UILabel!
+    @IBOutlet weak var doneButton: UIButton!
     
     var durationTime: String = ""
     
@@ -17,9 +18,14 @@ class SessionFinishedViewController: UIViewController {
         super.viewDidLoad()
 
         durationLabel.text = durationTime
+        doneButton.layer.cornerRadius = 6
     }
     
     @IBAction func closeSessionFinished(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func clickDoneButton(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
 }
