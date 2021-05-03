@@ -29,15 +29,16 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     var rotationAngle: CGFloat!
     var times: [Time] = []
     var songs: [Song] = []
-    var selectedTime: Int = 299
+    var initialTime: Time = Time(timeName: "5 mins", timeDuration: 299)
+    var countdownTime: Int = 299
     var selectedSong: [Song] = []
     var timer: Timer?
     var player: AVAudioPlayer?
+    var isPlaying: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-                
+ 
         // timerPicker modification
         rotationAngle = -90 * (.pi/180)
         timerPicker.transform = CGAffineTransform(rotationAngle: rotationAngle)
@@ -52,7 +53,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     func generateTime() {
-        times.append(Time(timeName: "5 mins", timeDuration: 299))
+        times.append(initialTime)
         times.append(Time(timeName: "10 mins", timeDuration: 599))
         times.append(Time(timeName: "15 mins", timeDuration: 899))
         times.append(Time(timeName: "30 mins", timeDuration: 1799))
@@ -135,6 +136,24 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         loadAmbience()
     }
     
+    func formatTimer(_ totalSeconds: Int) -> String {
+        let seconds: Int = totalSeconds % 60
+        let minutes: Int = (totalSeconds/60) % 60
+        
+        return String(format: "-%02d:%02d", minutes, seconds)
+    }
+    
+    func formatDuration(_ totalSeconds: Int) -> String {
+        let seconds: Int = totalSeconds % 60
+        let minutes: Int = (totalSeconds/60) % 60
+        
+        if minutes == 0 {
+            return String(format: "%2d secs", seconds)
+        }
+        
+        return String(format: "%2d mins %2d secs", minutes, seconds)
+    }
+    
     func configureInterface() {
         headerLabel.text = "Have a great sleep"
         descriptionLabel.text = "Once upon a time th..e.... a.. zzzzzzzzz..."
@@ -147,21 +166,14 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         playButton.setImage(UIImage(named: "icon_stop"), for: .normal)
         countdownView.layer.cornerRadius = 19
         countdownView.isHidden = false
-        countdownLabel.text = formatTimer(selectedTime)
-    }
-    
-    func formatTimer(_ totalSeconds: Int) -> String {
-        let seconds: Int = totalSeconds % 60
-        let minutes: Int = (totalSeconds/60) % 60
-        
-        return String(format: "-%02d:%02d", minutes, seconds)
+        countdownLabel.text = formatTimer(countdownTime)
     }
     
     @objc func updateTimer() {
-        countdownLabel.text = formatTimer(selectedTime)
+        countdownLabel.text = formatTimer(countdownTime)
         
-        if selectedTime != 0 {
-            selectedTime -= 1
+        if countdownTime != 0 {
+            countdownTime -= 1
         } else {
             if let timer = timer {
                 timer.invalidate()
@@ -171,6 +183,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
                 player.stop()
                 self.player = nil
             }
+            
+            performSegue(withIdentifier: "sessionFinished", sender: self)
         }
     }
     
@@ -185,15 +199,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         do {
             try AVAudioSession.sharedInstance().setMode(.default)
             try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
-            guard let urlString = urlString else {
-                return
-            }
             
+            guard let urlString = urlString else { return }
             player = try AVAudioPlayer(contentsOf: URL(string: urlString)!)
-            guard let player = player else {
-                return
-            }
-            
+            guard let player = player else { return }
             player.delegate = self
             player.play()
         } catch {
@@ -201,15 +210,42 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         }
     }
     
-    @IBAction func playSong(_ sender: UIButton) {
-        configureInterface()
-        configureTimer()
-        configureSong()
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        if countdownTime != 0 && flag == true {
+            player.play()
+        }
     }
     
-    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        if selectedTime != 0 && flag == true {
-            player.play()
+    @IBAction func playSong(_ sender: UIButton) {
+        if isPlaying {
+            if let timer = timer {
+                timer.invalidate()
+                self.timer = nil
+            }
+            if let player = player {
+                player.stop()
+                self.player = nil
+            }
+            
+            isPlaying = false
+            performSegue(withIdentifier: "sessionFinished", sender: self)
+        } else {
+            configureInterface()
+            configureTimer()
+            configureSong()
+            isPlaying = true
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destinationVC = segue.destination as? SessionFinishedViewController else {
+            return }
+        
+        if countdownTime != 0 {
+            let durationTime = initialTime.duration! - countdownTime
+            destinationVC.durationTime = "\(formatDuration(durationTime))"
+        } else {
+            destinationVC.durationTime = "\(initialTime.name!)."
         }
     }
 }
@@ -250,7 +286,7 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let selectedRow = times[row]
-        selectedTime = selectedRow.duration!
+        initialTime = times[row]
+        countdownTime = initialTime.duration!
     }
 }

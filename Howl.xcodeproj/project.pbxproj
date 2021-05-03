@@ -22,6 +22,8 @@
 		B5C40879263D340500D8F494 /* inochi_no_namae.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B5C40878263D340500D8F494 /* inochi_no_namae.m4a */; };
 		B5C4087B263D387000D8F494 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C4087A263D387000D8F494 /* UserDefaults.swift */; };
 		B5C4087E263F0B7900D8F494 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C4087D263F0B7900D8F494 /* Time.swift */; };
+		B5C40888263FF7FB00D8F494 /* SessionFinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C40887263FF7FB00D8F494 /* SessionFinishedViewController.swift */; };
+		B5C4088A263FFDEC00D8F494 /* NunitoSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5C40889263FFDEC00D8F494 /* NunitoSans-Italic.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		B5C40878263D340500D8F494 /* inochi_no_namae.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = inochi_no_namae.m4a; sourceTree = "<group>"; };
 		B5C4087A263D387000D8F494 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		B5C4087D263F0B7900D8F494 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		B5C40887263FF7FB00D8F494 /* SessionFinishedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionFinishedViewController.swift; sourceTree = "<group>"; };
+		B5C40889263FFDEC00D8F494 /* NunitoSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Italic.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,17 +78,17 @@
 		B5C4084C263ABD0900D8F494 /* Howl */ = {
 			isa = PBXGroup;
 			children = (
+				B5C40872263C798700D8F494 /* View */,
+				B5C4087F263FC7E100D8F494 /* Controller */,
 				B5C4087C263F0B4B00D8F494 /* Object */,
 				B5C40873263D33DA00D8F494 /* Audio */,
-				B5C40872263C798700D8F494 /* View */,
+				B5C4086C263C72A100D8F494 /* Fonts */,
 				B5C4084D263ABD0900D8F494 /* AppDelegate.swift */,
 				B5C4084F263ABD0900D8F494 /* SceneDelegate.swift */,
 				B5C4087A263D387000D8F494 /* UserDefaults.swift */,
-				B5C40851263ABD0900D8F494 /* ViewController.swift */,
 				B5C40859263ABD0A00D8F494 /* Assets.xcassets */,
 				B5C4085E263ABD0A00D8F494 /* Info.plist */,
 				B5C40856263ABD0900D8F494 /* Howl.xcdatamodeld */,
-				B5C4086C263C72A100D8F494 /* Fonts */,
 				B5C40867263B1EC600D8F494 /* .gitignore */,
 			);
 			path = Howl;
@@ -93,6 +97,7 @@
 		B5C4086C263C72A100D8F494 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				B5C40889263FFDEC00D8F494 /* NunitoSans-Italic.ttf */,
 				B5C4086E263C733300D8F494 /* NunitoSans-Regular.ttf */,
 				B5C4086F263C734400D8F494 /* NunitoSans-Bold.ttf */,
 			);
@@ -124,6 +129,15 @@
 				B5C4087D263F0B7900D8F494 /* Time.swift */,
 			);
 			path = Object;
+			sourceTree = "<group>";
+		};
+		B5C4087F263FC7E100D8F494 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B5C40887263FF7FB00D8F494 /* SessionFinishedViewController.swift */,
+				B5C40851263ABD0900D8F494 /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,6 +199,7 @@
 			files = (
 				B5C40868263B1EC600D8F494 /* .gitignore in Resources */,
 				B5C4085D263ABD0A00D8F494 /* LaunchScreen.storyboard in Resources */,
+				B5C4088A263FFDEC00D8F494 /* NunitoSans-Italic.ttf in Resources */,
 				B5C40877263D33FB00D8F494 /* merry_go_round_of_life.m4a in Resources */,
 				B5C40870263C736B00D8F494 /* NunitoSans-Regular.ttf in Resources */,
 				B5C40871263C737100D8F494 /* NunitoSans-Bold.ttf in Resources */,
@@ -205,6 +220,7 @@
 				B5C4087E263F0B7900D8F494 /* Time.swift in Sources */,
 				B5C40852263ABD0900D8F494 /* ViewController.swift in Sources */,
 				B5C4087B263D387000D8F494 /* UserDefaults.swift in Sources */,
+				B5C40888263FF7FB00D8F494 /* SessionFinishedViewController.swift in Sources */,
 				B5C4084E263ABD0900D8F494 /* AppDelegate.swift in Sources */,
 				B5C40850263ABD0900D8F494 /* SceneDelegate.swift in Sources */,
 				B5C40858263ABD0900D8F494 /* Howl.xcdatamodeld in Sources */,

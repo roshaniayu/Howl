@@ -11,6 +11,9 @@
         <array key="NunitoSans-Bold.ttf">
             <string>NunitoSans-Bold</string>
         </array>
+        <array key="NunitoSans-Italic.ttf">
+            <string>NunitoSans-Italic</string>
+        </array>
         <array key="NunitoSans-Regular.ttf">
             <string>NunitoSans-Regular</string>
         </array>
@@ -120,15 +123,84 @@
                         <outlet property="setButton" destination="i6O-6C-jue" id="34Q-Qg-5lE"/>
                         <outlet property="timerPicker" destination="JG4-Gf-gVe" id="GdJ-CZ-mRQ"/>
                         <outlet property="timerView" destination="RYL-6R-kCz" id="6s4-2J-4uw"/>
+                        <segue destination="BEF-oQ-c8k" kind="presentation" identifier="sessionFinished" id="ZKk-FE-yBw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="138.46153846153845" y="125.82938388625591"/>
         </scene>
+        <!--Session Finished View Controller-->
+        <scene sceneID="GmJ-6I-cIW">
+            <objects>
+                <viewController id="BEF-oQ-c8k" customClass="SessionFinishedViewController" customModule="Howl" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2nm-eq-QIh">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Session Finished" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wpG-Cy-Ha2">
+                                <rect key="frame" x="110" y="29" width="170" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="22"/>
+                                <color key="textColor" red="0.81568627449999997" green="0.82352941180000006" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qpk-GG-Sta">
+                                <rect key="frame" x="28" y="32" width="20" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.81568627449999997" green="0.82352941180000006" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" image="icon_close"/>
+                                <connections>
+                                    <action selector="closeSessionFinished:" destination="BEF-oQ-c8k" eventType="touchUpInside" id="I80-aI-q9p"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Today, Howl has softly sent you to a sweet slumber for a total of" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQm-gx-rV7">
+                                <rect key="frame" x="30" y="303" width="330" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="17"/>
+                                <color key="textColor" red="0.67843137249999996" green="0.69019607839999997" blue="0.65490196079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWd-HZ-4kY">
+                                <rect key="frame" x="76" y="385" width="284" height="102"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">The sun showed up again. So I looked up and asked it: ‘Why?’
+The sun looked down, and brightly whispered: ‘To give you another try.’
+- Brad Montague</string>
+                                <fontDescription key="fontDescription" name="NunitoSans-Italic" family="Nunito Sans" pointSize="13"/>
+                                <color key="textColor" red="0.67843137249999996" green="0.69019607839999997" blue="0.65490196079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="duration time" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dC9-Zy-Vdj">
+                                <rect key="frame" x="189" y="327" width="171" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="17"/>
+                                <color key="textColor" red="0.81568627449999997" green="0.82352941180000006" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="“" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7C-pv-eOO">
+                                <rect key="frame" x="30" y="385" width="38" height="91"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="92"/>
+                                <color key="textColor" red="0.67843137249999996" green="0.69019607839999997" blue="0.65490196079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Nhz-bN-17j"/>
+                        <color key="backgroundColor" red="0.14901960780000001" green="0.26274509800000001" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </view>
+                    <connections>
+                        <outlet property="durationLabel" destination="dC9-Zy-Vdj" id="x9C-mp-EeU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zte-ei-kFv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="881.53846153846155" y="125.82938388625591"/>
+        </scene>
     </scenes>
     <resources>
         <image name="background" width="500" height="1082"/>
+        <image name="icon_close" width="500" height="611"/>
         <image name="icon_history" width="500" height="480"/>
         <image name="icon_play" width="500" height="500"/>
         <image name="icon_set" width="500" height="479"/>
