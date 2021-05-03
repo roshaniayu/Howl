@@ -76,32 +76,6 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         }
     }
     
-    func fetchItem(context: NSManagedObjectContext, fetchRequest: NSFetchRequest<Song>) {
-        do {
-            selectedSong = try context.fetch(fetchRequest)
-        } catch {
-            print("Error fetching data from context: \(error)")
-        }
-    }
-    
-    func adjustBackground() {
-        let song = selectedSong[0]
-        backgroundImage.image = UIImage(named: song.background!)
-        characterImage.image = UIImage(named: song.character!)
-        
-        if song.title == "Path of the Wind" {
-            backgroundImage.frame = CGRect(x: -1, y: 370, width: 392, height: 528)
-            characterImage.frame = CGRect(x: -1, y: 480, width: 392, height: 518)
-        } else if song.title == "The Name of Life" {
-            backgroundImage.frame = CGRect(x: -1, y: 410, width: 392, height: 528)
-            characterImage.frame = CGRect(x: -1, y: 445, width: 392, height: 518)
-        }
-        
-        playButton.layer.zPosition = 1
-        historyButton.layer.zPosition = 1
-        setButton.layer.zPosition = 1
-    }
-    
     func insertItem(audio: String, background: String, character: String, selected: Bool, title: String) {
         let context = getCoreDataContainer()
         let newSong = Song(context: context)
@@ -115,14 +89,51 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         saveItem(context: context)
     }
     
+    func adjustBackground() {
+        let song = selectedSong[0]
+        backgroundImage.image = UIImage(named: song.background!)
+        characterImage.image = UIImage(named: song.character!)
+        
+        if song.title == "Merry Go Round of Life" {
+            backgroundImage.frame = CGRect(x: -1, y: 466, width: 392, height: 528)
+            characterImage.frame = CGRect(x: -1, y: 567, width: 392, height: 518)
+            
+        } else if song.title == "Path of the Wind" {
+            backgroundImage.frame = CGRect(x: -1, y: 370, width: 392, height: 528)
+            characterImage.frame = CGRect(x: -1, y: 480, width: 392, height: 518)
+        } else if song.title == "The Name of Life" {
+            backgroundImage.frame = CGRect(x: -1, y: 410, width: 392, height: 528)
+            characterImage.frame = CGRect(x: -1, y: 445, width: 392, height: 518)
+        }
+        
+        playButton.layer.zPosition = 1
+        historyButton.layer.zPosition = 1
+        setButton.layer.zPosition = 1
+    }
+    
+    func fetchSongs() {
+        let context = getCoreDataContainer()
+        let fetchRequest: NSFetchRequest<Song> = Song.fetchRequest()
+        
+        do {
+            songs = try context.fetch(fetchRequest)
+        } catch {
+            print("Error fetching data from context: \(error)")
+        }
+    }
+    
     func loadAmbience() {
         let context = getCoreDataContainer()
         let fetchRequest: NSFetchRequest<Song> = Song.fetchRequest()
-        let selectedSong = NSPredicate(format: "selected == %d", true)
+        let filterSong = NSPredicate(format: "selected == %d", true)
+        fetchRequest.predicate = filterSong
         
-        fetchRequest.predicate = selectedSong
-        fetchItem(context: context, fetchRequest: fetchRequest)
-        adjustBackground()
+        do {
+            selectedSong = try context.fetch(fetchRequest)
+            adjustBackground()
+        } catch {
+            print("Error fetching data from context: \(error)")
+        }
     }
     
     func loadSongsData() {
@@ -132,6 +143,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             insertItem(audio: "inochi_no_namae", background: "clouds", character: "spirited_away", selected: false, title: "The Name of Life")
             
             UserDefaults.standard.setValueLoad(value: true)
+        } else {
+            fetchSongs()
         }
         
         loadAmbience()
@@ -245,15 +258,26 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         }
     }
     
+    @IBAction func setAmbience(_ sender: UIButton) {
+        performSegue(withIdentifier: "setAmbience", sender: self)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let destinationVC = segue.destination as? SessionFinishedViewController else {
-            return }
-        
-        if countdownTime != 0 {
-            let durationTime = initialTime.duration! - countdownTime
-            destinationVC.durationTime = "\(formatDuration(durationTime))"
-        } else {
-            destinationVC.durationTime = "\(initialTime.name!)."
+        if segue.identifier == "sessionFinished" {
+            guard let destinationVC = segue.destination as? SessionFinishedViewController else {
+                return }
+            
+            if countdownTime != 0 {
+                let durationTime = initialTime.duration! - countdownTime
+                destinationVC.durationTime = "\(formatDuration(durationTime))"
+            } else {
+                destinationVC.durationTime = "\(initialTime.name!)."
+            }
+        } else if segue.identifier == "setAmbience" {
+            guard let destinationVC = segue.destination as? AmbienceViewController else {
+                return }
+            destinationVC.ambiences = songs
+            destinationVC.selectedAmbience = selectedSong
         }
     }
 }
