@@ -39,17 +39,18 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
  
-        // timerPicker modification
+        configurePickerView()
+        generateTime()
+        loadSongsData()
+    }
+    
+    func configurePickerView() {
         rotationAngle = -90 * (.pi/180)
         timerPicker.transform = CGAffineTransform(rotationAngle: rotationAngle)
         timerPicker.frame = CGRect(x: 64, y: 300, width: 260, height: pickerWidth)
         self.view.addSubview(timerPicker)
         
-        // timerView modification
         timerView.layer.cornerRadius = 22
-        
-        generateTime()
-        loadSongsData()
     }
     
     func generateTime() {
@@ -154,11 +155,22 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         return String(format: "%2d mins %2d secs", minutes, seconds)
     }
     
-    func configureInterface() {
+    func configureStopInterface() {
+        headerLabel.text = "Sleep better"
+        descriptionLabel.text = "This soothing relaxing instrumental sound helps you deal with insomnia and fall asleep within minutes."
+        descriptionLabel.frame = CGRect(x: 40, y: 223, width: 310, height: 70)
+        timerPicker.isHidden = false
+        timerView.isHidden = false
+        historyButton.isHidden = false
+        setButton.isHidden = false
+        playButton.setImage(UIImage(named: "icon_play"), for: .normal)
+        countdownView.isHidden = true
+    }
+    
+    func configurePlayInterface() {
         headerLabel.text = "Have a great sleep"
         descriptionLabel.text = "Once upon a time th..e.... a.. zzzzzzzzz..."
         descriptionLabel.frame = CGRect(x: 97, y: 223, width: 197, height: 48)
-        descriptionLabel.numberOfLines = 2
         timerPicker.isHidden = true
         timerView.isHidden = true
         historyButton.isHidden = true
@@ -169,21 +181,25 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         countdownLabel.text = formatTimer(countdownTime)
     }
     
+    func stopSong() {
+        if let timer = timer {
+            timer.invalidate()
+            self.timer = nil
+        }
+        if let player = player {
+            player.stop()
+            self.player = nil
+        }
+        isPlaying = false
+    }
+    
     @objc func updateTimer() {
         countdownLabel.text = formatTimer(countdownTime)
         
         if countdownTime != 0 {
             countdownTime -= 1
         } else {
-            if let timer = timer {
-                timer.invalidate()
-                self.timer = nil
-            }
-            if let player = player {
-                player.stop()
-                self.player = nil
-            }
-            
+            stopSong()
             performSegue(withIdentifier: "sessionFinished", sender: self)
         }
     }
@@ -218,19 +234,11 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     
     @IBAction func playSong(_ sender: UIButton) {
         if isPlaying {
-            if let timer = timer {
-                timer.invalidate()
-                self.timer = nil
-            }
-            if let player = player {
-                player.stop()
-                self.player = nil
-            }
-            
-            isPlaying = false
+            stopSong()
+            configureStopInterface()
             performSegue(withIdentifier: "sessionFinished", sender: self)
         } else {
-            configureInterface()
+            configurePlayInterface()
             configureTimer()
             configureSong()
             isPlaying = true

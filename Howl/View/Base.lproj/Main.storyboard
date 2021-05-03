@@ -50,7 +50,7 @@
                                 <color key="textColor" red="0.81568627449999997" green="0.82352941180000006" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This soothing relaxing instrumental sound helps you deal with insomnia and fall asleep within minutes." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGg-mS-zP6">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This soothing relaxing instrumental sound helps you deal with insomnia and fall asleep within minutes." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGg-mS-zP6">
                                 <rect key="frame" x="40" y="223" width="310" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="17"/>
@@ -92,6 +92,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.81568627449999997" green="0.82352941180000006" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" image="icon_set"/>
+                                <connections>
+                                    <segue destination="857-Jk-W9f" kind="presentation" id="Stt-ML-7zG"/>
+                                </connections>
                             </button>
                             <view hidden="YES" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZCa-OZ-oOI">
                                 <rect key="frame" x="153" y="287" width="84" height="38"/>
@@ -172,7 +175,7 @@ The sun looked down, and brightly whispered: ‘To give you another try.’
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="duration time" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dC9-Zy-Vdj">
-                                <rect key="frame" x="189" y="327" width="171" height="24"/>
+                                <rect key="frame" x="192" y="327" width="168" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="17"/>
                                 <color key="textColor" red="0.81568627449999997" green="0.82352941180000006" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -196,6 +199,21 @@ The sun looked down, and brightly whispered: ‘To give you another try.’
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zte-ei-kFv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="881.53846153846155" y="125.82938388625591"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="I7o-zz-F1K">
+            <objects>
+                <viewController id="857-Jk-W9f" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Bt8-vn-tYU">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="k5z-ga-CCj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KE8-nk-coB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="882" y="862"/>
         </scene>
     </scenes>
     <resources>
