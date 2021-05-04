@@ -23,20 +23,20 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var countdownView: UIView!
     @IBOutlet weak var countdownLabel: UILabel!
     
-    let userDefaultsValue = UserDefaults.standard.getValueLoad()
-    let pickerWidth: CGFloat = 62
-    let pickerHeight: CGFloat = 80
-    let progressLayer = CAShapeLayer()
-    let trackLayer = CAShapeLayer()
     var rotationAngle: CGFloat!
+    var pickerWidth: CGFloat!
+    var pickerHeight: CGFloat!
+    var timer: Timer!
+    var player: AVAudioPlayer!
+    var progressLayer: CAShapeLayer!
+    var trackLayer: CAShapeLayer!
+    var userDefaultsValue = UserDefaults.standard.getValueLoad()
+    var initialTime: Time = Time(timeName: "5 mins", timeDuration: 299)
     var times: [Time] = []
     var songs: [Song] = []
     var selectedSong: [Song] = []
-    var initialTime: Time = Time(timeName: "5 mins", timeDuration: 299)
     var countdownTime: Int = 299
     var lastTime: Int = 299
-    var timer: Timer?
-    var player: AVAudioPlayer?
     var isPlaying: Bool = false
     var newSongs: [Song] = []
     var newSelectedSong: [Song] = []
@@ -51,6 +51,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     
     func configurePickerView() {
         rotationAngle = -90 * (.pi/180)
+        pickerWidth = 62
+        pickerHeight = 80
         timerPicker.transform = CGAffineTransform(rotationAngle: rotationAngle)
         timerPicker.frame = CGRect(x: 64, y: 300, width: 260, height: pickerWidth)
         self.view.addSubview(timerPicker)
@@ -208,7 +210,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     func animateCircle() {
         let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
         basicAnimation.toValue = 1
-        basicAnimation.duration = Double(lastTime) + 78.0
+        basicAnimation.duration = Double(lastTime) + 80.0
         basicAnimation.fillMode = CAMediaTimingFillMode.forwards
         basicAnimation.isRemovedOnCompletion = false
         progressLayer.add(basicAnimation, forKey: "circleMovement")
@@ -217,6 +219,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     func configureCircleTime() {
         // Track layer
         let circularPath = UIBezierPath(arcCenter: CGPoint(x: 195, y: 754), radius: 42, startAngle: -CGFloat.pi/2, endAngle: 2 * CGFloat.pi, clockwise: true)
+        trackLayer = CAShapeLayer()
         trackLayer.path = circularPath.cgPath
         trackLayer.strokeColor = UIColor(red:0.68, green:0.69, blue:0.65, alpha:0.2).cgColor
         trackLayer.lineWidth = 6
@@ -224,6 +227,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         self.view.layer.addSublayer(trackLayer)
         
         // Progress layer
+        progressLayer = CAShapeLayer()
         progressLayer.path = circularPath.cgPath
         progressLayer.strokeColor = UIColor(red:0.82, green:0.82, blue:0.80, alpha:1.0).cgColor
         progressLayer.lineWidth = 6
@@ -412,6 +416,5 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         initialTime = times[row]
         countdownTime = initialTime.duration!
-        animateCircle()
     }
 }
