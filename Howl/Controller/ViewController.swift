@@ -96,6 +96,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         let song = selectedSong[0]
         backgroundImage.image = UIImage(named: song.background!)
         characterImage.image = UIImage(named: song.character!)
+        backgroundImage.layer.removeAllAnimations()
+        characterImage.layer.removeAllAnimations()
         
         if song.title == "Merry Go Round of Life" {
             backgroundImage.frame = CGRect(x: -1, y: 466, width: 392, height: 528)
@@ -172,6 +174,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     func configureStopInterface() {
+        adjustBackground()
         headerLabel.text = "Sleep better"
         descriptionLabel.text = "This soothing relaxing instrumental sound helps you deal with insomnia and fall asleep within minutes."
         descriptionLabel.frame = CGRect(x: 40, y: 223, width: 310, height: 70)
@@ -251,6 +254,27 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         }
     }
     
+    func configueAnimation() {
+        let song = selectedSong[0]
+        
+        if song.title == "Merry Go Round of Life" {
+            UIView.animate(withDuration: 12, delay: 0.0, options: [.repeat, .autoreverse], animations: {
+                self.backgroundImage.frame.origin.y -= 138
+                self.characterImage.frame.origin.y -= 220
+            }, completion: nil)
+        } else if song.title == "Path of the Wind" {
+            UIView.animate(withDuration: 10, delay: 0.0, options: [.repeat, .autoreverse], animations: {
+                self.backgroundImage.frame.origin.y -= 180
+                self.characterImage.frame.origin.y -= 150
+            }, completion: nil)
+        } else if song.title == "The Name of Life" {
+            UIView.animate(withDuration: 8, delay: 0.0, options: [.repeat, .autoreverse], animations: {
+                self.backgroundImage.frame.origin.y -= 80
+                self.characterImage.frame.origin.y -= 118
+            }, completion: nil)
+        }
+    }
+    
     @IBAction func playSong(_ sender: UIButton) {
         if isPlaying {
             stopSong()
@@ -260,6 +284,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             configurePlayInterface()
             configureTimer()
             configureSong()
+            configueAnimation()
             isPlaying = true
         }
     }
