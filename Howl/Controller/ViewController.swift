@@ -26,6 +26,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     let userDefaultsValue = UserDefaults.standard.getValueLoad()
     let pickerWidth: CGFloat = 62
     let pickerHeight: CGFloat = 80
+    let progressLayer = CAShapeLayer()
+    let trackLayer = CAShapeLayer()
     var rotationAngle: CGFloat!
     var times: [Time] = []
     var songs: [Song] = []
@@ -185,6 +187,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         playButton.setImage(UIImage(named: "icon_play"), for: .normal)
         countdownView.isHidden = true
         countdownTime = lastTime
+        trackLayer.removeFromSuperlayer()
+        progressLayer.removeFromSuperlayer()
     }
     
     func configurePlayInterface() {
@@ -199,6 +203,34 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         countdownView.layer.cornerRadius = 19
         countdownView.isHidden = false
         countdownLabel.text = formatTimer(countdownTime)
+    }
+    
+    func animateCircle() {
+        let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
+        basicAnimation.toValue = 1
+        basicAnimation.duration = Double(lastTime) + 78.0
+        basicAnimation.fillMode = CAMediaTimingFillMode.forwards
+        basicAnimation.isRemovedOnCompletion = false
+        progressLayer.add(basicAnimation, forKey: "circleMovement")
+    }
+    
+    func configureCircleTime() {
+        // Track layer
+        let circularPath = UIBezierPath(arcCenter: CGPoint(x: 195, y: 754), radius: 42, startAngle: -CGFloat.pi/2, endAngle: 2 * CGFloat.pi, clockwise: true)
+        trackLayer.path = circularPath.cgPath
+        trackLayer.strokeColor = UIColor(red:0.68, green:0.69, blue:0.65, alpha:0.2).cgColor
+        trackLayer.lineWidth = 6
+        trackLayer.fillColor = UIColor.clear.cgColor
+        self.view.layer.addSublayer(trackLayer)
+        
+        // Progress layer
+        progressLayer.path = circularPath.cgPath
+        progressLayer.strokeColor = UIColor(red:0.82, green:0.82, blue:0.80, alpha:1.0).cgColor
+        progressLayer.lineWidth = 6
+        progressLayer.fillColor = UIColor.clear.cgColor
+        progressLayer.lineCap = CAShapeLayerLineCap.round
+        progressLayer.strokeEnd = 0
+        self.view.layer.addSublayer(progressLayer)
     }
     
     func stopSong() {
@@ -228,6 +260,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     func configureTimer() {
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
         lastTime = countdownTime
+        configureCircleTime()
+        animateCircle()
     }
     
     func configureSong() {
@@ -378,5 +412,6 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         initialTime = times[row]
         countdownTime = initialTime.duration!
+        animateCircle()
     }
 }
