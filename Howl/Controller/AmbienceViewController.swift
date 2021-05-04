@@ -41,6 +41,12 @@ class AmbienceViewController: UIViewController {
     @IBAction func closeSetAmbience(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destinationVC = segue.destination as? ViewController else { return }
+        destinationVC.newSongs = ambiences
+        destinationVC.newSelectedSong = selectedAmbience
+    }
 }
 
 extension AmbienceViewController: UITableViewDelegate, UITableViewDataSource {

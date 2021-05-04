@@ -236,14 +236,14 @@ The sun looked down, and brightly whispered: ‘To give you another try.’
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ambienceCell" textLabel="wwm-aI-Jyg" style="IBUITableViewCellStyleDefault" id="F1O-3F-VlV" customClass="AmbienceTableViewCell" customModule="Howl" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.333333969116211" width="390" height="46.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="24.333333969116211" width="390" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F1O-3F-VlV" id="mXa-Ec-2w1">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="46.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wwm-aI-Jyg">
-                                                    <rect key="frame" x="30" y="0.0" width="340" height="46.666667938232422"/>
+                                                    <rect key="frame" x="30" y="0.0" width="340" height="43.666667938232422"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="17"/>
@@ -271,16 +271,6 @@ The sun looked down, and brightly whispered: ‘To give you another try.’
                                     <outlet property="delegate" destination="857-Jk-W9f" id="gkU-d0-FmB"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xnF-36-XbT">
-                                <rect key="frame" x="28" y="32" width="20" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.81568627449999997" green="0.82352941180000006" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" image="icon_close"/>
-                                <connections>
-                                    <action selector="closeSessionFinished:" destination="BEF-oQ-c8k" eventType="touchUpInside" id="zuV-yr-kbj"/>
-                                    <action selector="closeSetAmbience:" destination="857-Jk-W9f" eventType="touchUpInside" id="KVs-Wl-cFj"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Set Ambience" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1O-PE-utP">
                                 <rect key="frame" x="125" y="29" width="141" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -292,6 +282,27 @@ The sun looked down, and brightly whispered: ‘To give you another try.’
                                 <rect key="frame" x="-2" y="617" width="392" height="518"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xnF-36-XbT">
+                                <rect key="frame" x="28" y="32" width="20" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.81568627449999997" green="0.82352941180000006" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" image="icon_close"/>
+                                <connections>
+                                    <action selector="closeSessionFinished:" destination="BEF-oQ-c8k" eventType="touchUpInside" id="zuV-yr-kbj"/>
+                                    <action selector="closeSetAmbience:" destination="857-Jk-W9f" eventType="touchUpInside" id="KVs-Wl-cFj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O8s-AW-Hug">
+                                <rect key="frame" x="324" y="27" width="38" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="17"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" red="0.81568627449999997" green="0.82352941180000006" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <segue destination="sOw-xr-QVs" kind="unwind" unwindAction="performUnwindSegueOperation:" id="OkC-Xj-xpZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="k5z-ga-CCj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -302,6 +313,7 @@ The sun looked down, and brightly whispered: ‘To give you another try.’
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KE8-nk-coB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="sOw-xr-QVs" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="881.53846153846155" y="861.61137440758284"/>
         </scene>

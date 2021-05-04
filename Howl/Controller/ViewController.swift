@@ -29,12 +29,15 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     var rotationAngle: CGFloat!
     var times: [Time] = []
     var songs: [Song] = []
+    var selectedSong: [Song] = []
     var initialTime: Time = Time(timeName: "5 mins", timeDuration: 299)
     var countdownTime: Int = 299
-    var selectedSong: [Song] = []
+    var lastTime: Int = 299
     var timer: Timer?
     var player: AVAudioPlayer?
     var isPlaying: Bool = false
+    var newSongs: [Song] = []
+    var newSelectedSong: [Song] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -178,6 +181,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         setButton.isHidden = false
         playButton.setImage(UIImage(named: "icon_play"), for: .normal)
         countdownView.isHidden = true
+        countdownTime = lastTime
     }
     
     func configurePlayInterface() {
@@ -214,11 +218,13 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         } else {
             stopSong()
             performSegue(withIdentifier: "sessionFinished", sender: self)
+            configureStopInterface()
         }
     }
     
     func configureTimer() {
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+        lastTime = countdownTime
     }
     
     func configureSong() {
@@ -248,8 +254,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     @IBAction func playSong(_ sender: UIButton) {
         if isPlaying {
             stopSong()
-            configureStopInterface()
             performSegue(withIdentifier: "sessionFinished", sender: self)
+            configureStopInterface()
         } else {
             configurePlayInterface()
             configureTimer()
@@ -279,6 +285,33 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             destinationVC.ambiences = songs
             destinationVC.selectedAmbience = selectedSong
         }
+    }
+    
+    func loadChangedAmbience() {
+        let context = getCoreDataContainer()
+        let fetchRequest: NSFetchRequest<Song> = Song.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "title = %@", selectedSong[0].title!)
+        
+        do {
+            let ambienceToChange = try context.fetch(fetchRequest)
+            ambienceToChange[0].setValue(true, forKey: "selected")
+        } catch {
+            print("Error fetching data from context \(error)")
+        }
+        
+        saveItem(context: context)
+        fetchSongs()
+        adjustBackground()
+    }
+    
+    @IBAction func performUnwindSegueOperation(_ sender: UIStoryboardSegue) {
+        guard let sourceVC = sender.source as? AmbienceViewController else { return }
+        sourceVC.ambiences = newSongs
+        sourceVC.selectedAmbience = newSelectedSong
+        songs = newSongs
+        selectedSong = newSelectedSong
+        
+        loadChangedAmbience()
     }
 }
 
