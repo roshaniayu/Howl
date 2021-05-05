@@ -203,7 +203,7 @@ The sun looked down, and brightly whispered: ‘To give you another try.’
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Nhz-bN-17j"/>
-                        <color key="backgroundColor" red="0.14901960780000001" green="0.26274509800000001" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.1764705882352941" green="0.25882352941176467" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <connections>
                         <outlet property="doneButton" destination="qpb-iW-Kxu" id="Jlk-WZ-DaZ"/>
