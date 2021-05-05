@@ -221,7 +221,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         let circularPath = UIBezierPath(arcCenter: CGPoint(x: 195, y: 754), radius: 42, startAngle: -CGFloat.pi/2, endAngle: 2 * CGFloat.pi, clockwise: true)
         trackLayer = CAShapeLayer()
         trackLayer.path = circularPath.cgPath
-        trackLayer.strokeColor = UIColor(red:0.68, green:0.69, blue:0.65, alpha:0.2).cgColor
+        trackLayer.strokeColor = UIColor.trackColor.cgColor
         trackLayer.lineWidth = 6
         trackLayer.fillColor = UIColor.clear.cgColor
         self.view.layer.addSublayer(trackLayer)
@@ -229,7 +229,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         // Progress layer
         progressLayer = CAShapeLayer()
         progressLayer.path = circularPath.cgPath
-        progressLayer.strokeColor = UIColor(red:0.82, green:0.82, blue:0.80, alpha:1.0).cgColor
+        progressLayer.strokeColor = #colorLiteral(red: 0.8138257861, green: 0.8239135146, blue: 0.8020212054, alpha: 1).cgColor
         progressLayer.lineWidth = 6
         progressLayer.fillColor = UIColor.clear.cgColor
         progressLayer.lineCap = CAShapeLayerLineCap.round
@@ -403,7 +403,7 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         label.frame = CGRect(x: 0, y: 0, width: pickerWidth, height: pickerHeight)
         label.textAlignment = .center
         label.font = UIFont(name: "NunitoSans-Regular.ttf", size: 17)
-        label.textColor = UIColor(red: 0.82, green: 0.82, blue: 0.80, alpha: 1.0)
+        label.textColor = #colorLiteral(red: 0.8138257861, green: 0.8239135146, blue: 0.8020212054, alpha: 1)
         label.text = times[row].name
         view.addSubview(label)
         

@@ -26,6 +26,7 @@
 		B5C4088A263FFDEC00D8F494 /* NunitoSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5C40889263FFDEC00D8F494 /* NunitoSans-Italic.ttf */; };
 		B5C4088C264023A000D8F494 /* AmbienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C4088B264023A000D8F494 /* AmbienceViewController.swift */; };
 		B5C4088E26403F6300D8F494 /* AmbienceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C4088D26403F6300D8F494 /* AmbienceTableViewCell.swift */; };
+		B5CF316B26427E1A00AB728A /* ColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CF316A26427E1A00AB728A /* ColorTheme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		B5C40889263FFDEC00D8F494 /* NunitoSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Italic.ttf"; sourceTree = "<group>"; };
 		B5C4088B264023A000D8F494 /* AmbienceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmbienceViewController.swift; sourceTree = "<group>"; };
 		B5C4088D26403F6300D8F494 /* AmbienceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmbienceTableViewCell.swift; sourceTree = "<group>"; };
+		B5CF316A26427E1A00AB728A /* ColorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTheme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +88,7 @@
 				B5C4087F263FC7E100D8F494 /* Controller */,
 				B5C4087C263F0B4B00D8F494 /* Object */,
 				B5C40873263D33DA00D8F494 /* Audio */,
-				B5C4086C263C72A100D8F494 /* Fonts */,
+				B5C4086C263C72A100D8F494 /* Font */,
 				B5C4084D263ABD0900D8F494 /* AppDelegate.swift */,
 				B5C4084F263ABD0900D8F494 /* SceneDelegate.swift */,
 				B5C4087A263D387000D8F494 /* UserDefaults.swift */,
@@ -98,14 +100,14 @@
 			path = Howl;
 			sourceTree = "<group>";
 		};
-		B5C4086C263C72A100D8F494 /* Fonts */ = {
+		B5C4086C263C72A100D8F494 /* Font */ = {
 			isa = PBXGroup;
 			children = (
 				B5C40889263FFDEC00D8F494 /* NunitoSans-Italic.ttf */,
 				B5C4086E263C733300D8F494 /* NunitoSans-Regular.ttf */,
 				B5C4086F263C734400D8F494 /* NunitoSans-Bold.ttf */,
 			);
-			path = Fonts;
+			path = Font;
 			sourceTree = "<group>";
 		};
 		B5C40872263C798700D8F494 /* View */ = {
@@ -130,6 +132,7 @@
 		B5C4087C263F0B4B00D8F494 /* Object */ = {
 			isa = PBXGroup;
 			children = (
+				B5CF316A26427E1A00AB728A /* ColorTheme.swift */,
 				B5C4087D263F0B7900D8F494 /* Time.swift */,
 				B5C4088D26403F6300D8F494 /* AmbienceTableViewCell.swift */,
 			);
@@ -224,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5C4087E263F0B7900D8F494 /* Time.swift in Sources */,
+				B5CF316B26427E1A00AB728A /* ColorTheme.swift in Sources */,
 				B5C40852263ABD0900D8F494 /* ViewController.swift in Sources */,
 				B5C4088C264023A000D8F494 /* AmbienceViewController.swift in Sources */,
 				B5C4087B263D387000D8F494 /* UserDefaults.swift in Sources */,
