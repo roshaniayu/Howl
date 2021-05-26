@@ -274,6 +274,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         
         do {
             try AVAudioSession.sharedInstance().setMode(.default)
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
             try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
             
             guard let urlString = urlString else { return }
