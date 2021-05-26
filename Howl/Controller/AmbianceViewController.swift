@@ -18,8 +18,6 @@ class AmbianceViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("test")
-        
         adjustBackground()
     }
     
