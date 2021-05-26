@@ -93,7 +93,7 @@
                                 <color key="tintColor" red="0.81568627449999997" green="0.82352941180000006" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" image="icon_set"/>
                                 <connections>
-                                    <action selector="setAmbience:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nXU-E4-WX1"/>
+                                    <action selector="setAmbiance:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NwJ-tx-Eju"/>
                                 </connections>
                             </button>
                             <view hidden="YES" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZCa-OZ-oOI">
@@ -127,7 +127,7 @@
                         <outlet property="timerPicker" destination="JG4-Gf-gVe" id="GdJ-CZ-mRQ"/>
                         <outlet property="timerView" destination="RYL-6R-kCz" id="6s4-2J-4uw"/>
                         <segue destination="BEF-oQ-c8k" kind="presentation" identifier="sessionFinished" id="ZKk-FE-yBw"/>
-                        <segue destination="857-Jk-W9f" kind="presentation" identifier="setAmbience" id="ZXn-R9-ILg"/>
+                        <segue destination="857-Jk-W9f" kind="presentation" identifier="setAmbiance" id="ZXn-R9-ILg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -214,10 +214,10 @@ The sun looked down, and brightly whispered: ‘To give you another try.’
             </objects>
             <point key="canvasLocation" x="881.53846153846155" y="125.82938388625591"/>
         </scene>
-        <!--Ambience View Controller-->
+        <!--Ambiance View Controller-->
         <scene sceneID="I7o-zz-F1K">
             <objects>
-                <viewController id="857-Jk-W9f" customClass="AmbienceViewController" customModule="Howl" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="857-Jk-W9f" customClass="AmbianceViewController" customModule="Howl" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bt8-vn-tYU">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -235,7 +235,7 @@ The sun looked down, and brightly whispered: ‘To give you another try.’
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ambienceCell" textLabel="wwm-aI-Jyg" style="IBUITableViewCellStyleDefault" id="F1O-3F-VlV" customClass="AmbienceTableViewCell" customModule="Howl" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ambianceCell" textLabel="wwm-aI-Jyg" style="IBUITableViewCellStyleDefault" id="F1O-3F-VlV" customClass="AmbianceTableViewCell" customModule="Howl" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="24.333333969116211" width="390" height="46.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F1O-3F-VlV" id="mXa-Ec-2w1">
@@ -271,8 +271,8 @@ The sun looked down, and brightly whispered: ‘To give you another try.’
                                     <outlet property="delegate" destination="857-Jk-W9f" id="gkU-d0-FmB"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Set Ambience" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1O-PE-utP">
-                                <rect key="frame" x="125" y="29" width="141" height="31"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Set Ambiance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1O-PE-utP">
+                                <rect key="frame" x="125" y="29" width="142" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="22"/>
                                 <color key="textColor" red="0.81568627449999997" green="0.82352941180000006" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -289,7 +289,7 @@ The sun looked down, and brightly whispered: ‘To give you another try.’
                                 <state key="normal" image="icon_close"/>
                                 <connections>
                                     <action selector="closeSessionFinished:" destination="BEF-oQ-c8k" eventType="touchUpInside" id="zuV-yr-kbj"/>
-                                    <action selector="closeSetAmbience:" destination="857-Jk-W9f" eventType="touchUpInside" id="KVs-Wl-cFj"/>
+                                    <action selector="closeSetAmbiance:" destination="857-Jk-W9f" eventType="touchUpInside" id="wCC-cQ-cgY"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O8s-AW-Hug">
@@ -308,8 +308,8 @@ The sun looked down, and brightly whispered: ‘To give you another try.’
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="backgroundImage" destination="fJR-ku-fZc" id="GuH-Jw-VVr"/>
-                        <outlet property="characterImage" destination="d2m-Ck-rcm" id="qUi-g3-mKW"/>
+                        <outlet property="backgroundImage" destination="fJR-ku-fZc" id="qZ7-bU-XS5"/>
+                        <outlet property="characterImage" destination="d2m-Ck-rcm" id="Ndw-lS-KP8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KE8-nk-coB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

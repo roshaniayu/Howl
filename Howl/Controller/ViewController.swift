@@ -131,7 +131,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         }
     }
     
-    func loadAmbience() {
+    func loadAmbiance() {
         let context = getCoreDataContainer()
         let fetchRequest: NSFetchRequest<Song> = Song.fetchRequest()
         let filterSong = NSPredicate(format: "selected == %d", true)
@@ -156,7 +156,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             fetchSongs()
         }
         
-        loadAmbience()
+        loadAmbiance()
     }
     
     func formatTimer(_ totalSeconds: Int) -> String {
@@ -292,7 +292,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         }
     }
     
-    func configueAnimation() {
+    func configureAnimation() {
         let song = selectedSong[0]
         
         if song.title == "Merry Go Round of Life" {
@@ -322,13 +322,13 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             configurePlayInterface()
             configureTimer()
             configureSong()
-            configueAnimation()
+            configureAnimation()
             isPlaying = true
         }
     }
     
-    @IBAction func setAmbience(_ sender: UIButton) {
-        performSegue(withIdentifier: "setAmbience", sender: self)
+    @IBAction func setAmbiance(_ sender: UIButton) {
+        performSegue(withIdentifier: "setAmbiance", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -342,22 +342,22 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             } else {
                 destinationVC.durationTime = "\(initialTime.name!)."
             }
-        } else if segue.identifier == "setAmbience" {
-            guard let destinationVC = segue.destination as? AmbienceViewController else {
+        } else if segue.identifier == "setAmbiance" {
+            guard let destinationVC = segue.destination as? AmbianceViewController else {
                 return }
-            destinationVC.ambiences = songs
-            destinationVC.selectedAmbience = selectedSong
+            destinationVC.ambiances = songs
+            destinationVC.selectedAmbiance = selectedSong
         }
     }
     
-    func loadChangedAmbience() {
+    func loadChangedAmbiance() {
         let context = getCoreDataContainer()
         let fetchRequest: NSFetchRequest<Song> = Song.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "title = %@", selectedSong[0].title!)
         
         do {
-            let ambienceToChange = try context.fetch(fetchRequest)
-            ambienceToChange[0].setValue(true, forKey: "selected")
+            let ambianceToChange = try context.fetch(fetchRequest)
+            ambianceToChange[0].setValue(true, forKey: "selected")
         } catch {
             print("Error fetching data from context \(error)")
         }
@@ -368,13 +368,13 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     @IBAction func performUnwindSegueOperation(_ sender: UIStoryboardSegue) {
-        guard let sourceVC = sender.source as? AmbienceViewController else { return }
-        sourceVC.ambiences = newSongs
-        sourceVC.selectedAmbience = newSelectedSong
+        guard let sourceVC = sender.source as? AmbianceViewController else { return }
+        sourceVC.ambiances = newSongs
+        sourceVC.selectedAmbiance = newSelectedSong
         songs = newSongs
         selectedSong = newSelectedSong
         
-        loadChangedAmbience()
+        loadChangedAmbiance()
     }
 }
 

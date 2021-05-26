@@ -24,8 +24,8 @@
 		B5C4087E263F0B7900D8F494 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C4087D263F0B7900D8F494 /* Time.swift */; };
 		B5C40888263FF7FB00D8F494 /* SessionFinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C40887263FF7FB00D8F494 /* SessionFinishedViewController.swift */; };
 		B5C4088A263FFDEC00D8F494 /* NunitoSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5C40889263FFDEC00D8F494 /* NunitoSans-Italic.ttf */; };
-		B5C4088C264023A000D8F494 /* AmbienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C4088B264023A000D8F494 /* AmbienceViewController.swift */; };
-		B5C4088E26403F6300D8F494 /* AmbienceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C4088D26403F6300D8F494 /* AmbienceTableViewCell.swift */; };
+		B5C4088C264023A000D8F494 /* AmbianceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C4088B264023A000D8F494 /* AmbianceViewController.swift */; };
+		B5C4088E26403F6300D8F494 /* AmbianceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C4088D26403F6300D8F494 /* AmbianceTableViewCell.swift */; };
 		B5CF316B26427E1A00AB728A /* ColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CF316A26427E1A00AB728A /* ColorTheme.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,8 +49,8 @@
 		B5C4087D263F0B7900D8F494 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		B5C40887263FF7FB00D8F494 /* SessionFinishedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionFinishedViewController.swift; sourceTree = "<group>"; };
 		B5C40889263FFDEC00D8F494 /* NunitoSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Italic.ttf"; sourceTree = "<group>"; };
-		B5C4088B264023A000D8F494 /* AmbienceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmbienceViewController.swift; sourceTree = "<group>"; };
-		B5C4088D26403F6300D8F494 /* AmbienceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmbienceTableViewCell.swift; sourceTree = "<group>"; };
+		B5C4088B264023A000D8F494 /* AmbianceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmbianceViewController.swift; sourceTree = "<group>"; };
+		B5C4088D26403F6300D8F494 /* AmbianceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmbianceTableViewCell.swift; sourceTree = "<group>"; };
 		B5CF316A26427E1A00AB728A /* ColorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTheme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,7 +134,7 @@
 			children = (
 				B5CF316A26427E1A00AB728A /* ColorTheme.swift */,
 				B5C4087D263F0B7900D8F494 /* Time.swift */,
-				B5C4088D26403F6300D8F494 /* AmbienceTableViewCell.swift */,
+				B5C4088D26403F6300D8F494 /* AmbianceTableViewCell.swift */,
 			);
 			path = Object;
 			sourceTree = "<group>";
@@ -144,7 +144,7 @@
 			children = (
 				B5C40887263FF7FB00D8F494 /* SessionFinishedViewController.swift */,
 				B5C40851263ABD0900D8F494 /* ViewController.swift */,
-				B5C4088B264023A000D8F494 /* AmbienceViewController.swift */,
+				B5C4088B264023A000D8F494 /* AmbianceViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -229,12 +229,12 @@
 				B5C4087E263F0B7900D8F494 /* Time.swift in Sources */,
 				B5CF316B26427E1A00AB728A /* ColorTheme.swift in Sources */,
 				B5C40852263ABD0900D8F494 /* ViewController.swift in Sources */,
-				B5C4088C264023A000D8F494 /* AmbienceViewController.swift in Sources */,
+				B5C4088C264023A000D8F494 /* AmbianceViewController.swift in Sources */,
 				B5C4087B263D387000D8F494 /* UserDefaults.swift in Sources */,
 				B5C40888263FF7FB00D8F494 /* SessionFinishedViewController.swift in Sources */,
 				B5C4084E263ABD0900D8F494 /* AppDelegate.swift in Sources */,
 				B5C40850263ABD0900D8F494 /* SceneDelegate.swift in Sources */,
-				B5C4088E26403F6300D8F494 /* AmbienceTableViewCell.swift in Sources */,
+				B5C4088E26403F6300D8F494 /* AmbianceTableViewCell.swift in Sources */,
 				B5C40858263ABD0900D8F494 /* Howl.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

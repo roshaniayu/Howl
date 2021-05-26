@@ -1,5 +1,5 @@
 //
-//  AmbienceTableViewCell.swift
+//  AmbianceTableViewCell.swift
 //  Howl
 //
 //  Created by Roshani Ayu Pranasti on 03/05/21.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AmbienceTableViewCell: UITableViewCell {
+class AmbianceTableViewCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var checkImage: UIImageView!
