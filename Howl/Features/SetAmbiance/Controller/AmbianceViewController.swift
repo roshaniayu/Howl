@@ -58,7 +58,7 @@ extension AmbianceViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ambianceCell", for: indexPath) as! AmbianceTableViewCell
         let ambiance = ambiances[indexPath.row]
         cell.titleLabel.text = ambiance.title
-        tableView.separatorColor = UIColor(red: 0.68, green: 0.69, blue: 0.65, alpha: 1.0)
+        tableView.separatorColor = HowlColor.graySeparator
         tableView.tableFooterView = UIView()
         
         return cell

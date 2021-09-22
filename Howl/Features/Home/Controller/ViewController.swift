@@ -223,7 +223,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         let circularPath = UIBezierPath(arcCenter: CGPoint(x: 195, y: 754), radius: 42, startAngle: -CGFloat.pi/2, endAngle: 2 * CGFloat.pi, clockwise: true)
         trackLayer = CAShapeLayer()
         trackLayer.path = circularPath.cgPath
-        trackLayer.strokeColor = UIColor.trackColor.cgColor
+        trackLayer.strokeColor = HowlColor.grayTrack?.cgColor
         trackLayer.lineWidth = 6
         trackLayer.fillColor = UIColor.clear.cgColor
         self.view.layer.addSublayer(trackLayer)

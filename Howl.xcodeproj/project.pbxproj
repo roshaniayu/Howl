@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -28,7 +28,7 @@
 		B5C4088A263FFDEC00D8F494 /* NunitoSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5C40889263FFDEC00D8F494 /* NunitoSans-Italic.ttf */; };
 		B5C4088C264023A000D8F494 /* AmbianceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C4088B264023A000D8F494 /* AmbianceViewController.swift */; };
 		B5C4088E26403F6300D8F494 /* AmbianceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C4088D26403F6300D8F494 /* AmbianceTableViewCell.swift */; };
-		B5CF316B26427E1A00AB728A /* ColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CF316A26427E1A00AB728A /* ColorTheme.swift */; };
+		B5CF316B26427E1A00AB728A /* HowlColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CF316A26427E1A00AB728A /* HowlColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,7 +54,7 @@
 		B5C40889263FFDEC00D8F494 /* NunitoSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Italic.ttf"; sourceTree = "<group>"; };
 		B5C4088B264023A000D8F494 /* AmbianceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmbianceViewController.swift; sourceTree = "<group>"; };
 		B5C4088D26403F6300D8F494 /* AmbianceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmbianceTableViewCell.swift; sourceTree = "<group>"; };
-		B5CF316A26427E1A00AB728A /* ColorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTheme.swift; sourceTree = "<group>"; };
+		B5CF316A26427E1A00AB728A /* HowlColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowlColor.swift; sourceTree = "<group>"; };
 		CC680B1A2EC0AB04ACD797A5 /* Pods_Howl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Howl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98855D78792AD5EBF321F90 /* Pods-Howl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Howl.release.xcconfig"; path = "Target Support Files/Pods-Howl/Pods-Howl.release.xcconfig"; sourceTree = "<group>"; };
 		F49A019124E3719F00B0D873 /* Pods-Howl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Howl.debug.xcconfig"; path = "Target Support Files/Pods-Howl/Pods-Howl.debug.xcconfig"; sourceTree = "<group>"; };
@@ -80,6 +80,115 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B564097726FB8847004770AB /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				B564097826FB884C004770AB /* Home */,
+				B564097A26FB8868004770AB /* SetAmbiance */,
+				B564097926FB885E004770AB /* SessionHistory */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		B564097826FB884C004770AB /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B564098226FB8959004770AB /* Model */,
+				B564098026FB88D6004770AB /* Controller */,
+				B564097F26FB88D2004770AB /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B564097926FB885E004770AB /* SessionHistory */ = {
+			isa = PBXGroup;
+			children = (
+				B564097E26FB88CC004770AB /* Controller */,
+				B564097D26FB88C8004770AB /* View */,
+			);
+			path = SessionHistory;
+			sourceTree = "<group>";
+		};
+		B564097A26FB8868004770AB /* SetAmbiance */ = {
+			isa = PBXGroup;
+			children = (
+				B564097C26FB88AC004770AB /* Controller */,
+				B564097B26FB88A7004770AB /* View */,
+			);
+			path = SetAmbiance;
+			sourceTree = "<group>";
+		};
+		B564097B26FB88A7004770AB /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B564097C26FB88AC004770AB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B5C4088B264023A000D8F494 /* AmbianceViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B564097D26FB88C8004770AB /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B564097E26FB88CC004770AB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B5563DA6265E5CD9008E9FC4 /* HistoryViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B564097F26FB88D2004770AB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B5C40853263ABD0900D8F494 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B564098026FB88D6004770AB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B5C40851263ABD0900D8F494 /* ViewController.swift */,
+				B5C40887263FF7FB00D8F494 /* SessionFinishedViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B564098126FB8925004770AB /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				B5CF316A26427E1A00AB728A /* HowlColor.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		B564098226FB8959004770AB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B5C4087D263F0B7900D8F494 /* Time.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B564098326FB898B004770AB /* CustomUI */ = {
+			isa = PBXGroup;
+			children = (
+				B5C4088D26403F6300D8F494 /* AmbianceTableViewCell.swift */,
+			);
+			path = CustomUI;
+			sourceTree = "<group>";
+		};
 		B5C40841263ABD0900D8F494 = {
 			isa = PBXGroup;
 			children = (
@@ -101,15 +210,14 @@
 		B5C4084C263ABD0900D8F494 /* Howl */ = {
 			isa = PBXGroup;
 			children = (
-				B5C40872263C798700D8F494 /* View */,
-				B5C4087F263FC7E100D8F494 /* Controller */,
-				B5C4087C263F0B4B00D8F494 /* Object */,
+				B564097726FB8847004770AB /* Features */,
+				B5C4087C263F0B4B00D8F494 /* Themes */,
 				B5C40873263D33DA00D8F494 /* Audio */,
-				B5C4086C263C72A100D8F494 /* Font */,
 				B5C4084D263ABD0900D8F494 /* AppDelegate.swift */,
 				B5C4084F263ABD0900D8F494 /* SceneDelegate.swift */,
 				B5C4087A263D387000D8F494 /* UserDefaults.swift */,
 				B5C40859263ABD0A00D8F494 /* Assets.xcassets */,
+				B5C4085B263ABD0A00D8F494 /* LaunchScreen.storyboard */,
 				B5C4085E263ABD0A00D8F494 /* Info.plist */,
 				B5C40856263ABD0900D8F494 /* Howl.xcdatamodeld */,
 				B5C40867263B1EC600D8F494 /* .gitignore */,
@@ -127,15 +235,6 @@
 			path = Font;
 			sourceTree = "<group>";
 		};
-		B5C40872263C798700D8F494 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				B5C4085B263ABD0A00D8F494 /* LaunchScreen.storyboard */,
-				B5C40853263ABD0900D8F494 /* Main.storyboard */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		B5C40873263D33DA00D8F494 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,25 +245,14 @@
 			path = Audio;
 			sourceTree = "<group>";
 		};
-		B5C4087C263F0B4B00D8F494 /* Object */ = {
+		B5C4087C263F0B4B00D8F494 /* Themes */ = {
 			isa = PBXGroup;
 			children = (
-				B5CF316A26427E1A00AB728A /* ColorTheme.swift */,
-				B5C4087D263F0B7900D8F494 /* Time.swift */,
-				B5C4088D26403F6300D8F494 /* AmbianceTableViewCell.swift */,
+				B564098126FB8925004770AB /* Color */,
+				B5C4086C263C72A100D8F494 /* Font */,
+				B564098326FB898B004770AB /* CustomUI */,
 			);
-			path = Object;
-			sourceTree = "<group>";
-		};
-		B5C4087F263FC7E100D8F494 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				B5C40887263FF7FB00D8F494 /* SessionFinishedViewController.swift */,
-				B5C40851263ABD0900D8F494 /* ViewController.swift */,
-				B5C4088B264023A000D8F494 /* AmbianceViewController.swift */,
-				B5563DA6265E5CD9008E9FC4 /* HistoryViewController.swift */,
-			);
-			path = Controller;
+			path = Themes;
 			sourceTree = "<group>";
 		};
 		D2339C17A38EA6F838A0A701 /* Pods */ = {
@@ -173,7 +261,6 @@
 				F49A019124E3719F00B0D873 /* Pods-Howl.debug.xcconfig */,
 				D98855D78792AD5EBF321F90 /* Pods-Howl.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -299,7 +386,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5C4087E263F0B7900D8F494 /* Time.swift in Sources */,
-				B5CF316B26427E1A00AB728A /* ColorTheme.swift in Sources */,
+				B5CF316B26427E1A00AB728A /* HowlColor.swift in Sources */,
 				B5C40852263ABD0900D8F494 /* ViewController.swift in Sources */,
 				B5563DA7265E5CD9008E9FC4 /* HistoryViewController.swift in Sources */,
 				B5C4088C264023A000D8F494 /* AmbianceViewController.swift in Sources */,
