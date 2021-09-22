@@ -81,11 +81,15 @@
                                     <action selector="playSong:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YV3-Qg-JMX"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPv-n4-xv1">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPv-n4-xv1">
                                 <rect key="frame" x="115" y="742" width="24" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.81568627449999997" green="0.82352941180000006" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" image="icon_history"/>
+                                <connections>
+                                    <action selector="sessionHistory:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cuE-hp-qXT"/>
+                                    <segue destination="rTp-lA-qIp" kind="presentation" identifier="sessionHistory" id="cfu-UG-qct"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i6O-6C-jue">
                                 <rect key="frame" x="251" y="742" width="24" height="24"/>
@@ -132,7 +136,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138.46153846153845" y="125.82938388625591"/>
+            <point key="canvasLocation" x="3" y="862"/>
         </scene>
         <!--Session Finished View Controller-->
         <scene sceneID="GmJ-6I-cIW">
@@ -143,7 +147,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qpk-GG-Sta">
-                                <rect key="frame" x="28" y="32" width="20" height="24"/>
+                                <rect key="frame" x="30" y="32" width="20" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.81568627449999997" green="0.82352941180000006" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" image="icon_close"/>
@@ -212,7 +216,7 @@ The sun looked down, and brightly whispered: ‘To give you another try.’
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zte-ei-kFv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="881.53846153846155" y="125.82938388625591"/>
+            <point key="canvasLocation" x="882" y="1598"/>
         </scene>
         <!--Ambiance View Controller-->
         <scene sceneID="I7o-zz-F1K">
@@ -283,7 +287,7 @@ The sun looked down, and brightly whispered: ‘To give you another try.’
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xnF-36-XbT">
-                                <rect key="frame" x="28" y="32" width="20" height="24"/>
+                                <rect key="frame" x="30" y="32" width="20" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.81568627449999997" green="0.82352941180000006" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" image="icon_close"/>
@@ -316,6 +320,105 @@ The sun looked down, and brightly whispered: ‘To give you another try.’
                 <exit id="sOw-xr-QVs" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="881.53846153846155" y="861.61137440758284"/>
+        </scene>
+        <!--History View Controller-->
+        <scene sceneID="SGz-VY-PCX">
+            <objects>
+                <viewController id="rTp-lA-qIp" customClass="HistoryViewController" customModule="Howl" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vA2-3e-8qe">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="66i-yi-s5L">
+                                <rect key="frame" x="30" y="32" width="20" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="Ffv-8Q-hi6"/>
+                                    <constraint firstAttribute="height" constant="24" id="xbH-g6-XjN"/>
+                                </constraints>
+                                <color key="tintColor" red="0.81568627449999997" green="0.82352941180000006" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" image="icon_close"/>
+                                <connections>
+                                    <action selector="closeSessionFinished:" destination="BEF-oQ-c8k" eventType="touchUpInside" id="j05-cN-siU"/>
+                                    <action selector="closeSetAmbiance:" destination="857-Jk-W9f" eventType="touchUpInside" id="2B7-G5-Hgz"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Session History" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OHF-Rg-hoY">
+                                <rect key="frame" x="115.99999999999999" y="20" width="158.66666666666663" height="30.333333333333329"/>
+                                <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="22"/>
+                                <color key="textColor" red="0.81568627449999997" green="0.82352941180000006" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DfI-YT-fdA" customClass="FSCalendar">
+                                <rect key="frame" x="17" y="20.333333333333343" width="356" height="300"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="Lds-A2-TCg"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="headerTitleColor">
+                                        <color key="value" red="0.67843137249999996" green="0.69019607839999997" blue="0.65490196079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="todayColor">
+                                        <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="0.20336024808567882" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleTodayColor">
+                                        <color key="value" red="0.81568627449999997" green="0.82352941180000006" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="weekdayTextColor">
+                                        <color key="value" red="0.67843137249999996" green="0.69019607839999997" blue="0.65490196079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectionColor">
+                                        <color key="value" red="0.81568627449999997" green="0.82352941180000006" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleSelectionColor">
+                                        <color key="value" red="0.14901960780000001" green="0.26274509800000001" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleDefaultColor">
+                                        <color key="value" red="0.67843137249999996" green="0.69019607839999997" blue="0.65490196079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="headerTitleTextSize">
+                                        <real key="value" value="13"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="weekdayTextSize">
+                                        <real key="value" value="13"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="titleTextSize">
+                                        <real key="value" value="17"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="headerMinimumDissolvedAlpha">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rowHeight">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="headerHeight">
+                                        <real key="value" value="70"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="rTp-lA-qIp" id="BC0-K2-vY9"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fvs-EL-dhO"/>
+                        <color key="backgroundColor" red="0.14901960780000001" green="0.26274509800000001" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="OHF-Rg-hoY" firstAttribute="leading" secondItem="66i-yi-s5L" secondAttribute="trailing" constant="66" id="EZh-dA-6rp"/>
+                            <constraint firstItem="fvs-EL-dhO" firstAttribute="trailing" secondItem="DfI-YT-fdA" secondAttribute="trailing" constant="17" id="HOh-YQ-yx1"/>
+                            <constraint firstItem="DfI-YT-fdA" firstAttribute="leading" secondItem="fvs-EL-dhO" secondAttribute="leading" constant="17" id="I4j-Qf-paB"/>
+                            <constraint firstItem="OHF-Rg-hoY" firstAttribute="top" secondItem="fvs-EL-dhO" secondAttribute="top" constant="20" id="IZu-tW-uXw"/>
+                            <constraint firstItem="DfI-YT-fdA" firstAttribute="top" secondItem="OHF-Rg-hoY" secondAttribute="bottom" constant="-30" id="Kmg-EV-p8k"/>
+                            <constraint firstItem="66i-yi-s5L" firstAttribute="top" secondItem="fvs-EL-dhO" secondAttribute="top" constant="32" id="btI-mO-vgx"/>
+                            <constraint firstItem="66i-yi-s5L" firstAttribute="leading" secondItem="fvs-EL-dhO" secondAttribute="leading" constant="30" id="u9B-G8-coF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="calendar" destination="DfI-YT-fdA" id="zQg-s1-PT8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nZ9-Tc-rXz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="881.53846153846155" y="150"/>
         </scene>
     </scenes>
     <resources>

@@ -1,0 +1,6 @@
+framework module Pods_Howl {
+  umbrella header "Pods-Howl-umbrella.h"
+
+  export *
+  module * { export * }
+}

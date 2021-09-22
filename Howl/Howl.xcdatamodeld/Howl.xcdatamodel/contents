@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20D74" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="History" representedClassName="History" syncable="YES" codeGenerationType="class">
+        <attribute name="activity" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="String"/>
+        <attribute name="duration" optional="YES" attributeType="String"/>
+        <attribute name="time" optional="YES" attributeType="String"/>
+    </entity>
     <entity name="Song" representedClassName="Song" syncable="YES" codeGenerationType="class">
         <attribute name="audio" optional="YES" attributeType="String"/>
         <attribute name="background" optional="YES" attributeType="String"/>
@@ -8,6 +14,7 @@
         <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
     <elements>
+        <element name="History" positionX="-63" positionY="18" width="128" height="89"/>
         <element name="Song" positionX="-63" positionY="-18" width="128" height="104"/>
     </elements>
 </model>

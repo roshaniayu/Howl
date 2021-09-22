@@ -40,6 +40,9 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     var isPlaying: Bool = false
     var newSongs: [Song] = []
     var newSelectedSong: [Song] = []
+    var durationTime: Int = 0
+    var songPlayedDate: String = ""
+    var songPlayedTime: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,7 +109,6 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         if song.title == "Merry Go Round of Life" {
             backgroundImage.frame = CGRect(x: -1, y: 466, width: 392, height: 528)
             characterImage.frame = CGRect(x: -1, y: 567, width: 392, height: 518)
-            
         } else if song.title == "Path of the Wind" {
             backgroundImage.frame = CGRect(x: -1, y: 370, width: 392, height: 528)
             characterImage.frame = CGRect(x: -1, y: 480, width: 392, height: 518)
@@ -249,6 +251,17 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         isPlaying = false
     }
     
+    func insertHistory() {
+        let context = getCoreDataContainer()
+        let newHistory = History(context: context)
+        newHistory.activity = "Sleep better"
+        newHistory.date = songPlayedDate
+        newHistory.duration = "\(formatDuration(durationTime))"
+        newHistory.time = songPlayedTime
+        
+        saveItem(context: context)
+    }
+    
     @objc func updateTimer() {
         countdownLabel.text = formatTimer(countdownTime)
         
@@ -258,6 +271,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             stopSong()
             performSegue(withIdentifier: "sessionFinished", sender: self)
             configureStopInterface()
+            insertHistory()
         }
     }
     
@@ -314,22 +328,46 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         }
     }
     
+    func formatDate() -> DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MM-yyyy"
+
+        return formatter
+    }
+    
+    func formatTime() -> DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "h:mm a"
+
+        return formatter
+    }
+    
     @IBAction func playSong(_ sender: UIButton) {
         if isPlaying {
             stopSong()
             performSegue(withIdentifier: "sessionFinished", sender: self)
             configureStopInterface()
+            insertHistory()
         } else {
             configurePlayInterface()
             configureTimer()
             configureSong()
             configureAnimation()
             isPlaying = true
+            let date = Date()
+            let dateFormatter = formatDate()
+            let timeFormatter = formatTime()
+            songPlayedDate = dateFormatter.string(from: date)
+            songPlayedTime = timeFormatter.string(from: date)
         }
     }
     
     @IBAction func setAmbiance(_ sender: UIButton) {
         performSegue(withIdentifier: "setAmbiance", sender: self)
+    }
+    
+    @IBAction func sessionHistory(_ sender: UIButton) {
+        performSegue(withIdentifier: "sessionHistory", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -338,7 +376,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
                 return }
             
             if countdownTime != 0 {
-                let durationTime = initialTime.duration! - countdownTime
+                durationTime = initialTime.duration! - countdownTime
                 destinationVC.durationTime = "\(formatDuration(durationTime))"
             } else {
                 destinationVC.durationTime = "\(initialTime.name!)."
@@ -348,6 +386,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
                 return }
             destinationVC.ambiances = songs
             destinationVC.selectedAmbiance = selectedSong
+        }  else if segue.identifier == "sessionHistory" {
+            print("masuk session history")
+//            guard let destinationVC = segue.destination as? HistoryViewController else {
+//                return }
         }
     }
     
@@ -403,7 +445,7 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         let label = UILabel()
         label.frame = CGRect(x: 0, y: 0, width: pickerWidth, height: pickerHeight)
         label.textAlignment = .center
-        label.font = UIFont(name: "NunitoSans-Regular.ttf", size: 17)
+        label.font = UIFont(name: "NunitoSans-Regular", size: 17)
         label.textColor = #colorLiteral(red: 0.8138257861, green: 0.8239135146, blue: 0.8020212054, alpha: 1)
         label.text = times[row].name
         view.addSubview(label)
